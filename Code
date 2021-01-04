@@ -1,0 +1,33 @@
+#include <stdio.h>
+int entermaxvalue()
+{
+    int value = -1;
+    while(value<6)
+    {
+        printf("Enter max value:");
+        scanf("%d",&value);
+    }
+    return value;
+}
+int main()
+{
+    int a,b,c,max;
+    int count=0;
+    max = entermaxvalue();
+    for(a = 3;a<max;a++)
+    {
+        for(b = 4; b<max; b++)
+        {
+            for(c = 5; c<max; c++)
+            {
+                if(((a*a + b*b) == c*c) && (a<b) && (b<c))
+                    {
+                        printf("%d,%d,%d\n",a,b,c);
+                        count++;
+                    }
+            }
+        }
+    }
+    printf("Numbers of Pythagorean triples:%d\n",count);
+    return 0;
+}
